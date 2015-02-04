@@ -1,9 +1,9 @@
 @import 'bower_components/newsapps-styles/init-helpers';
 
 @import 'base';
-@import 'vaccine/vaccine-search';
 
 .form-group {
+  margin: 0 0 .625em;
   label {
     display: inline-block;
     font-size: .875em;
@@ -56,13 +56,38 @@
   width: 100%;
 }
 
-.results-card{
-  border: 1px solid $text-gray;
-  border-radius: 2px;
+.results-card {
+  background-color: $background-gray;
   display: none;
+  font-weight: 300;
+  padding: .5em;
+  .results-header {
+    margin: 0 0 .625em;
+  }
+  .results-title {
+    font-size: 1.125em;
+    line-height: 1;
+    margin: 0 0 .25em;
+    padding: 0;
+  }
+  .county {
+    font-size: .875em;
+    font-weight: 300;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+  }
+  .stats {
+    font-size: .875em;
+    line-height: 1.2;
+    margin: 0 0 .375em;
+    padding: 0;
+  }
+  .number-stat {
+    font-weight: 700;
+  }
 }
 
-.active{
+.active {
   display: block;
 }
-
