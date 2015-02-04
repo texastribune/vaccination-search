@@ -18,7 +18,7 @@ sync_assets_to_s3:
 	aws s3 sync --delete --exclude '.*' app/assets s3://$(AWS_BUCKET)/graphics/$(PROJECT_SLUG)/raw_assets/
 
 # Used to pull down assets for this app from the graphics server
-sync_assets_from_local:
+sync_assets_to_local:
 	aws s3 sync s3://$(AWS_BUCKET)/graphics/$(PROJECT_SLUG)/raw_assets/ app/assets
 
 deploy:
