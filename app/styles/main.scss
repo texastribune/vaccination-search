@@ -1,0 +1,56 @@
+@import 'bower_components/newsapps-styles/init-helpers';
+
+@import 'base';
+
+.form-group {
+  label {
+    display: inline-block;
+    font-size: .875em;
+    font-weight: 700;
+    margin: 0 0 .357142857em;
+  }
+
+  input {
+    display: block;
+    line-height: 1.4;
+    padding: .3125em .625em;
+    width: 100%;
+  }
+}
+
+.tt-dropdown-menu {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid $bodytext-black;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.tt-suggestion {
+  border-bottom: 1px solid $bodytext-black;
+  display: block;
+  margin: 0;
+  padding: 1.25em .83em .83em;
+
+  &:last-child {
+    border-bottom: transparent;
+  }
+}
+
+.tt-cursor {
+  color: rgb(255, 255, 255);
+  background-color: $tribune-href;
+  cursor: pointer;
+}
+
+.tt-suggestion p {
+  margin: 0 0 .5em;
+  font-size: .75em;
+}
+
+.twitter-typeahead,
+.twitter-typeahead .tt-query,
+.twitter-typeahead .tt-hint {
+  width: 100%;
+}

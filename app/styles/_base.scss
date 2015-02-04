@@ -1,0 +1,61 @@
+$tribune-href: rgb(0, 137, 144);
+
+body {
+  color: $bodytext-black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  margin: .625em;
+}
+
+a {
+  color: $href-teal;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.header {
+  margin: 0 0 .625em;
+
+  h1 {
+    font-size: 1.375em;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 0;
+  }
+}
+
+.prose {
+  margin: 0 0 .625em; // 10px
+
+  p {
+    color: lighten($bodytext-black, 25%);
+    font-family: Georgia, serif;
+    font-size: .875em;
+    line-height: 1.4;
+    margin: 0 0 1em;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.graphic {
+  @include clearfix;
+  margin: 0 0 .625em;
+  width: 100%;
+}
+
+.footer {
+  color: lighten($bodytext-black, 45%);
+  font-size: .75em;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+}
