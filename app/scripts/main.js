@@ -3,7 +3,7 @@
 (function() {
   'use strict';
 
-  var pymChild;
+  var pymChild, $billSearch;
 
   function render() {
     var searchDistricts = new Bloodhound({
@@ -18,7 +18,7 @@
 
     searchDistricts.initialize();
 
-    var $billSearch = $('#search').typeahead({
+    $billSearch = $('#search').typeahead({
       autoselect: true,
       hint: false,
       highlight: false,
@@ -27,6 +27,13 @@
       name: 'districts',
       displayKey: 'school_district',
       source: searchDistricts.ttAdapter()
+    });
+
+    $billSearch.on('typeahead:selected', function(e, datum) {
+      e.stopPropagation();
+      console.log(datum); // this is the object with your data!
+
+      pymChild.sendHeight();
     });
 
     if (pymChild) {
