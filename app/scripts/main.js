@@ -32,7 +32,11 @@
     $billSearch.on('typeahead:selected', function(e, datum) {
       e.stopPropagation();
       console.log(datum); // this is the object with your data!
-
+      $('.results-card').addClass('active');
+      $('#name').text(datum.school_district);
+      $('#county').text(datum.county);
+      $('#students_exempting').text(datum.students_exempting);
+      $('#percent_students_exempting').text(datum.percent_students_exempting);
       pymChild.sendHeight();
     });
 

@@ -55,3 +55,14 @@
 .twitter-typeahead .tt-hint {
   width: 100%;
 }
+
+.results-card{
+  border: 1px solid $text-gray;
+  border-radius: 2px;
+  display: none;
+}
+
+.active{
+  display: block;
+}
+
