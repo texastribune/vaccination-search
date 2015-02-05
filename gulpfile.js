@@ -13,7 +13,6 @@ var $ = require('gulp-load-plugins')({
 var del = require('del');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
-var _ = require('lodash');
 var reload = browserSync.reload;
 
 gulp.task('jshint', function() {
@@ -41,7 +40,6 @@ gulp.task('styles', function() {
 
 gulp.task('templates', function() {
   var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
-  data._ = _;
 
   $.nunjucks.nunjucks.configure(['app/']);
 
