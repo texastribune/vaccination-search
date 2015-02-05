@@ -4,3 +4,4 @@ bower_components
 app/assets
 dist
 .tmp
+.DS_Store

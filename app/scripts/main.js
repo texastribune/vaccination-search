@@ -12,8 +12,8 @@
       limit: 10,
       prefetch: {
         url: 'assets/data/districts.json'
-      }
-      // ttl: 3600000 // One hour
+      },
+      ttl: 3600000 // One hour
     });
 
     searchDistricts.initialize();
@@ -22,7 +22,7 @@
       autoselect: true,
       hint: false,
       highlight: false,
-      minLength: 3
+      minLength: 2
       }, {
       name: 'districts',
       displayKey: 'school_district',
@@ -31,12 +31,12 @@
 
     $billSearch.on('typeahead:selected', function(e, datum) {
       e.stopPropagation();
-      console.log(datum); // this is the object with your data!
       $('.results-card').addClass('active');
       $('#name').text(datum.school_district);
       $('#county').text(datum.county);
       $('#students_exempting').text(datum.students_exempting);
       $('#percent_students_exempting').text(datum.percent_students_exempting);
+
       pymChild.sendHeight();
     });
 

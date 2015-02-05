@@ -61,7 +61,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('assets', function() {
-  return gulp.src(['app/assets/*', '!app/assets/images/'])
+  return gulp.src(['app/assets/**/*', '!app/assets/images/'])
   .pipe(gulp.dest('dist/assets'))
   .pipe($.size({title: 'assets'}));
 });
@@ -98,6 +98,7 @@ gulp.task('wiredep', function() {
 
 gulp.task('pym', function() {
   return gulp.src('bower_components/pym.js/dist/pym.min.js')
+    .pipe($.gzip({append: false}))
     .pipe(gulp.dest('dist/scripts/pym/'));
 });
 
