@@ -19,7 +19,7 @@
   {{ META.prose }}
 </div>
 
-<div id="graphic" class="graphic">
+<div class="graphic">
   <div class="form-group">
     <label for="search">Find your district or private school</label>
     <input id="search" class="typeahead" type="text" placeholder="E.g. Dallas ISD">
@@ -41,6 +41,56 @@
     <p class="stats">Number of students: <span class="number-stat">38,026</span></p>
     <p class="stats">Percentage of students: <span class="number-stat">0.75%</span></p>
   </div>
+</div>
+
+<div class="header">
+  <h1>{{ META.graphic_title_district }}</h1>
+</div>
+
+<div class="graphic">
+  <table>
+    <thead>
+      <tr>
+        <th>District</th>
+        <th>Students exempted</th>
+        <th>Percent exempted</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for district in DISTRICT %}
+      <tr>
+        <td>{{ district.district }} ({{ district.county }})</td>
+        <td>{{ district.number }}</td>
+        <td>{{ (district.percentage * 100)|round(1) }}%</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="header">
+  <h1>{{ META.graphic_title_private }}</h1>
+</div>
+
+<div class="graphic">
+  <table>
+    <thead>
+      <tr>
+        <th>School</th>
+        <th>Students exempted</th>
+        <th>Percent exempted</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for district in PRIVATE %}
+      <tr>
+        <td>{{ district.district }} ({{ district.county }})</td>
+        <td>{{ district.number }}</td>
+        <td>{{ (district.percentage * 100)|round(1) }}%</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 </div>
 
 <div class="footer">

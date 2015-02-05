@@ -32,7 +32,9 @@
       minLength: 2
       }, {
       name: 'districts',
-      displayKey: 'school_district',
+      displayKey: function(obj) {
+        return obj.school_district + ' (' + obj.county + ')'; 
+      },
       source: searchDistricts.ttAdapter()
     });
 

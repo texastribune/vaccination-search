@@ -98,3 +98,34 @@
 .active {
   display: block;
 }
+
+table {
+  font-size: .875em;
+  width: 100%;
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(240, 240, 240);
+}
+
+th {
+  border-bottom: 1px solid rgb(187, 187, 187);
+  font-weight: 800;
+  padding: 0 .428571429em .428571429em;
+  text-align: right;
+  vertical-align: middle;
+
+  &:first-child {
+    text-align: left;
+  }
+}
+
+td {
+  font-size: .857142857em;
+  padding: .428571429em;
+  text-align: right;
+
+  &:first-child {
+    text-align: left;
+  }
+}
