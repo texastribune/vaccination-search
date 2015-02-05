@@ -6,6 +6,13 @@
   var pymChild, $billSearch;
 
   function render() {
+    var $resultsCard = $('.results-card'),
+        $texasCard = $('.texas-card'),
+        $name = $('#name'),
+        $county = $('#county'),
+        $studentsExempting = $('#students_exempting'),
+        $percentStudentsExempting = $('#percent_students_exempting');
+
     var searchDistricts = new Bloodhound({
       datumTokenizer: Bloodhound.tokenizers.obj.whitespace('school_district'),
       queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -31,12 +38,12 @@
 
     $billSearch.on('typeahead:selected', function(e, datum) {
       e.stopPropagation();
-      $('.results-card').addClass('active');
-      $('#name').text(datum.school_district);
-      $('#county').text(datum.county);
-      $('#students_exempting').text(datum.students_exempting);
-      $('#percent_students_exempting').text(datum.percent_students_exempting);
-
+      $resultsCard.addClass('active');
+      $texasCard.removeClass('active');
+      $name.text(datum.school_district);
+      $county.text(datum.county);
+      $studentsExempting.text(datum.students_exempting);
+      $percentStudentsExempting.text(datum.percent_students_exempting);
       pymChild.sendHeight();
     });
 
